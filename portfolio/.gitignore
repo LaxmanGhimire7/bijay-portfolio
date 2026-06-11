@@ -9,7 +9,6 @@ server/node_modules/
 .env.*.local
 
 # Build files
-client/build/
 client/dist/
 server/build/
 
