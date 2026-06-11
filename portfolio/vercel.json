@@ -3,14 +3,9 @@
   "builds": [
     {
       "src": "server/server.js",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "client/package.json",
-      "use": "@vercel/static-build",
+      "use": "@vercel/node",
       "config": {
-        "distDir": "build",
-        "buildCommand": "npm install && npm run build"
+        "includeFiles": "client/build/**"
       }
     }
   ],
@@ -20,12 +15,8 @@
       "dest": "server/server.js"
     },
     {
-      "src": "/static/(.*)",
-      "dest": "client/build/static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "client/build/index.html"
+      "dest": "server/server.js"
     }
   ],
   "env": {
