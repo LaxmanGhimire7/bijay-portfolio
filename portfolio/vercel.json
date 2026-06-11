@@ -5,7 +5,10 @@
       "src": "server/server.js",
       "use": "@vercel/node",
       "config": {
-        "includeFiles": "client/build/**"
+        "includeFiles": [
+          "client/build/**",
+          "server/**"
+        ]
       }
     }
   ],
