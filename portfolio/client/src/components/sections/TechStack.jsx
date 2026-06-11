@@ -23,14 +23,14 @@ function useInView() {
 }
 
 const CATEGORY_COLORS = {
-  Database: '#d99a2b',
-  Backend: '#4f8cff',
-  Frontend: '#3fbf8f',
-  Runtime: '#9a7cff',
-  Markup: '#e56b6f',
-  Style: '#d96ba8',
-  Language: '#42b7c8',
-  Framework: '#e5894f',
+  Database: 'linear-gradient(135deg, #d99a2b, #f5a623)',
+  Backend: 'linear-gradient(135deg, #4f8cff, #0fc0ff)',
+  Frontend: 'linear-gradient(135deg, #3fbf8f, #43e97b)',
+  Runtime: 'linear-gradient(135deg, #9a7cff, #667eea)',
+  Markup: 'linear-gradient(135deg, #e56b6f, #f5576c)',
+  Style: 'linear-gradient(135deg, #d96ba8, #f093fb)',
+  Language: 'linear-gradient(135deg, #42b7c8, #a8edea)',
+  Framework: 'linear-gradient(135deg, #e5894f, #ff7e5f)',
 };
 
 export default function TechStack() {
@@ -50,6 +50,10 @@ export default function TechStack() {
               fontSize: 'clamp(30px, 5vw, 54px)',
               fontWeight: 800,
               marginBottom: '16px',
+              background: 'linear-gradient(135deg, #f8fafc 0%, #cbd5e1 50%, #94a3b8 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
             }}
           >
             Stack, structure, and engineering judgement.
@@ -72,10 +76,16 @@ export default function TechStack() {
               key={name}
               className="glass-card"
               style={{
-                padding: '22px',
+                padding: '24px',
                 opacity: inView ? 1 : 0,
                 transform: inView ? 'translateY(0)' : 'translateY(16px)',
                 transition: `opacity 420ms ease ${i * 60}ms, transform 420ms ease ${i * 60}ms`,
+                borderTop: `3px solid transparent`,
+                backgroundImage: `linear-gradient(135deg, rgba(15, 23, 50, 0.9), rgba(20, 30, 60, 0.7)), linear-gradient(135deg, transparent, transparent)`,
+                backgroundClip: 'padding-box, border-box',
+                backgroundOrigin: 'border-box',
+                border: '1px solid',
+                borderColor: 'var(--border-glow)',
               }}
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '12px', gap: '16px' }}>

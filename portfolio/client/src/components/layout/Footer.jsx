@@ -15,10 +15,10 @@ export default function Footer() {
         }}
       >
         <div style={{ textAlign: 'left' }}>
-          <strong style={{ display: 'block', color: 'var(--text-primary)', fontSize: '15px' }}>
+          <strong style={{ display: 'block', fontSize: '15px' }}>
             MERN MVC Portfolio
           </strong>
-          <span style={{ color: 'var(--text-muted)', fontSize: '13px' }}>
+          <span style={{ fontSize: '13px' }}>
             CET138 Full Stack Development
           </span>
         </div>
