@@ -30,12 +30,16 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/api/portfolio', portfolioRoutes);
 app.use('/api/sections', sectionRoutes);
 
-// Serve static files (works on both local and Vercel)
-app.use(express.static(path.join(__dirname, '../client/build')));
+// Serve static files
+const buildPath = process.env.VERCEL 
+  ? path.join(process.cwd(), 'client/build')
+  : path.join(__dirname, '../client/build');
+
+app.use(express.static(buildPath));
 
 // SPA fallback - serve index.html for all non-API routes
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'));
+  res.sendFile(path.join(buildPath, 'index.html'));
 });
 
 // Error handlers
